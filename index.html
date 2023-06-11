@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="app.js"></script>  
+    <title>EMP</title>
+</head>
+
+<body>
+    <div class="button-row">
+        <button class="button" onclick="showTable()">AllEmploy</button>
+        <button class="button" onclick="showNewEmployeeForm()">NewEmploy</button>
+        <button class="button">FullDump</button>
+        <button class="button">PartialDump</button>
+    </div>
+    
+    <div class="filter-row">
+        <label class="label">Filter Employees by:</label>
+        <select class="dropdown" id="filter-department">
+            <option value="Department">Choose Department</option>
+            <option value="Finance">Finance</option>
+            <option value="Technology">Technology</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Operations">Operations</option>
+        </select>
+        <select class="dropdown" id="filter-designation">
+            <option value="Designation">Choose Designation</option>
+            <option value="Trainee">Trainee</option>
+            <option value="Vice President">Vice President</option>
+            <option value="Manager">Manager</option>
+            <option value="President">President</option>
+        </select>
+        <button class="button" onclick="filterTable()">Filter</button>
+    </div>
+    <div id="table-container"></div>
+
+    <div id="form-container" style="display: none;">
+        <h2>New Employee</h2>
+        <div class="input-container">
+            <label for="empcode">Employee Code:</label>
+            <input type="text" id="empcode" class="input-field" required>
+        </div>
+        <div class="input-container">
+            <label for="name">Name:</label>
+            <input type="text" id="name" class="input-field" required>
+        </div>
+        <div class="input-container">
+            <label for="age">Age:</label>
+            <input type="number" id="age" class="input-field" required>
+        </div>
+        <div class="input-container">
+            <label class="label">Gender:</label>
+            <label class="radio-label">
+                <input type="radio" name="gender" value="Male" required> Male
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="gender" value="Female" required> Female
+            </label>
+        </div>
+        <div class="input-container">
+            <label for="department-select" class="label">Department:</label>
+            <select id="department-select" class="dropdown" required>
+                <option value="Finance">Finance</option>
+                <option value="Technology">Technology</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Operations">Operations</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="designation-select" class="label">Designation:</label>
+            <select id="designation-select" class="dropdown" required>
+                <option value="Trainee">Trainee</option>
+                <option value="Vice-President">Vice President</option>
+                <option value="Manager">Manager</option>
+                <option value="President">President</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" class="input-field" required>
+        </div>
+        <div class="button-row">
+            <button class="button" onclick="addNewEmployee()">Save</button>
+            <button class="button" onclick="showTable()">Cancel</button>
+        </div>
+    </div>
+</body>
+
+</html>
